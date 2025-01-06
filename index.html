@@ -1,0 +1,392 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibz Gaming Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #6c5ce7, #a363d9);
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 5rem; /* Increased by 25% from 4rem */
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.3); /* Added shadow */
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary {
+            background: #2ECC71;
+            color: white;
+            font-weight: bold;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-secondary {
+            background: #2ECC71;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+
+        .features {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .doc-link {
+            color: #7289DA;
+            text-decoration: none;
+            margin-top: 1rem;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .doc-link:hover {
+            text-decoration: underline;
+        }
+
+        .download-options {
+            padding: 4rem 0;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .store-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .store-button img {
+            height: 50px; /* Increased from 40px */
+            transition: transform 0.2s;
+        }
+
+        .store-button:hover img {
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .burger-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .burger-menu div {
+            width: 35px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 80px 40px;
+            transition: 0.4s;
+            z-index: 999;
+        }
+
+        .nav-menu.active {
+            top: 0;
+        }
+
+        .nav-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .grants-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #a363d9, #6c5ce7);
+            color: white;
+            text-align: center;
+        }
+
+        .grants-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .grants-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .grants-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="burger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <nav class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#developers">For Developers</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="img/logo-white.svg" alt="Dibz" style="height: 80px; margin-bottom: 2rem;">
+                <p class="tagline">A Roblox-like platform that runs in Discord!<br>Play right where you hangout with friends!</p>
+                <div class="cta-buttons">
+                    <a href="https://discord.gg/dibz" class="btn btn-primary">I Call Dibz!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">For Developers</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Luau Scripting</h3>
+                    <p>Create games using familiar Luau language</p>
+                    <a href="/docs/luau" class="doc-link">View Documentation</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Free Infrastructure</h3>
+                    <p>We handle all the multiplayer backend - just focus on making great games</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Developer Grants</h3>
+                    <p>Get $5K to bring your game ideas to life on Dibz</p>
+                    <a href="#apply" class="doc-link">Apply Now</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Open-Source Modules</h3>
+                    <p>Share your modules on Github, earn rewards when others use them</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="grants-section" id="grants">
+        <div class="container">
+            <div class="grants-content">
+                <h2>$5,000 Developer Grants</h2>
+                <p>Ready to build the next hit game? Get $5K funding, early access to our tools, and direct support from our team.</p>
+                <a href="#apply" class="btn btn-secondary">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="download-options" id="download">
+        <div class="container">
+            <h2>Download Dibz</h2>
+            <p style="margin-bottom: 2rem;">Dibz can also be installed as a native app on Mobile and Desktop</p>
+            <div class="store-buttons">
+                <a href="#steam" class="store-button">
+                    <img src="img/download-btn-ios-app-store.svg" alt="Download on Steam">
+                </a>
+                <a href="#epic" class="store-button">
+                    <img src="img/download-btn-ios-app-store.svg" alt="Download on Epic Games Store">
+                </a>
+                <a href="#ios" class="store-button">
+                    <img src="img/download-btn-ios-app-store.svg" alt="Download on App Store">
+                </a>
+                <a href="#macos" class="store-button">
+                    <img src="img/download-btn-ios-app-store.svg" alt="Download on Mac App Store">
+                </a>
+                <a href="#playstore" class="store-button">
+                    <img src="img/download-btn-ios-app-store.svg" alt="Get it on Google Play">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="https://github.com/dibz">GitHub</a>
+                    <a href="https://discord.gg/dibz">Discord</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 Dibz. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navMenu = document.querySelector('.nav-menu');
+
+        burgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
