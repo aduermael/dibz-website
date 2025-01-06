@@ -22,15 +22,36 @@
             color: white;
             text-align: left;
             padding: 1rem;
-            position: fixed;
-            width: 100%;
+            position: absolute;
+            max-width: 80%;
             z-index: 1001;
-            top: 60px;
+            top: 0;
+            display: flex;
+            align-items: center;
+            /* justify-content: space-between; */
+        }
+
+        .learn-more-btn {
+            background: transparent;
+            color: white;
+            padding: 0.2rem 0.3rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: normal;
+            transition: all 0.3s ease;
+            border: 1px solid white;
+            line-height: 1;
+            display: inline-block;
+        }
+
+        .learn-more-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
         .hero {
             background: linear-gradient(135deg, #6c5ce7, #a363d9);
-            min-height: 100vh;
+            height: 100vh;
             padding: 2rem;
             display: flex;
             align-items: center;
@@ -38,7 +59,6 @@
             text-align: center;
             color: white;
             position: relative;
-            margin-top: 7rem;
         }
 
         .container {
@@ -87,6 +107,10 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
+        .btn:active {
+            background-color: #27ae60;
+        }
+
         .btn-primary {
             background: #2ECC71;
             color: white;
@@ -103,6 +127,29 @@
             border: none;
         }
 
+        .burger-menu {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            z-index: 1003;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .burger-menu:hover {
+            transform: scale(1.1);
+        }
+
+        .burger-menu div {
+            width: 35px;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        /* Rest of the styles remain unchanged */
         .features {
             padding: 4rem 0;
             background: white;
@@ -187,22 +234,6 @@
             text-decoration: underline;
         }
 
-        .burger-menu {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1002;
-            cursor: pointer;
-        }
-
-        .burger-menu div {
-            width: 35px;
-            height: 3px;
-            background-color: white;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
-
         .nav-menu {
             position: fixed;
             top: -100%;
@@ -211,7 +242,7 @@
             background: rgba(0, 0, 0, 0.9);
             padding: 80px 40px;
             transition: 0.4s;
-            z-index: 999;
+            z-index: 1002;
         }
 
         .nav-menu.active {
@@ -298,7 +329,8 @@
     </div>
 
     <div class="announcement-banner">
-        🎮 Attention Roblox Developers! Get $5K grants to bring your games to Dibz. <a href="#grants" style="color: white; text-decoration: underline;">Learn More</a>
+        <span>📣 Roblox Developers, $5K grants for you to bring games to Dibz! <a href="#grants" class="learn-more-btn">Learn More</a></span>
+
     </div>
 
     <nav class="nav-menu">
@@ -376,20 +408,20 @@
             <h2>Download Dibz</h2>
             <p style="margin-bottom: 2rem;">Dibz can also be installed as a native app on Mobile and Desktop</p>
             <div class="store-buttons">
+	            <a href="#ios" class="store-button">
+	                <img src="img/download-btn-ios-app-store.svg" alt="Download on App Store">
+	            </a>
+				<a href="#playstore" class="store-button">
+                    <img src="img/download-btn-google-play.svg" alt="Get it on Google Play">
+                </a>
                 <a href="#steam" class="store-button">
-                    <img src="img/download-btn-ios-app-store.svg" alt="Download on Steam">
+                    <img src="img/download-btn-steam.webp" alt="Download on Steam">
                 </a>
                 <a href="#epic" class="store-button">
-                    <img src="img/download-btn-ios-app-store.svg" alt="Download on Epic Games Store">
-                </a>
-                <a href="#ios" class="store-button">
-                    <img src="img/download-btn-ios-app-store.svg" alt="Download on App Store">
+                    <img src="img/download-btn-egs.webp" alt="Download on Epic Games Store">
                 </a>
                 <a href="#macos" class="store-button">
-                    <img src="img/download-btn-ios-app-store.svg" alt="Download on Mac App Store">
-                </a>
-                <a href="#playstore" class="store-button">
-                    <img src="img/download-btn-ios-app-store.svg" alt="Get it on Google Play">
+                    <img src="img/download-btn-mac-app-store.svg" alt="Download on Mac App Store">
                 </a>
             </div>
         </div>
@@ -414,6 +446,7 @@
     <script>
         const burgerMenu = document.querySelector('.burger-menu');
         const navMenu = document.querySelector('.nav-menu');
+        const banner = document.querySelector('.announcement-banner');
 
         burgerMenu.addEventListener('click', () => {
             navMenu.classList.toggle('active');
