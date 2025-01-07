@@ -157,25 +157,38 @@
 
 		.features-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-template-columns: repeat(2, 1fr);
 			gap: 2rem;
 			margin-top: 2rem;
 		}
 
 		.feature-card {
-			padding: 2rem;
+			padding: 1.5rem;
 			border-radius: 10px;
 			background: #fff;
 			box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 			transition: transform 0.3s;
 			cursor: pointer;
+			position: relative;
 		}
 
 		.feature-card:hover {
 			transform: translateY(-5px);
 		}
 
-		.doc-link {
+		.feature-card img {
+			width: 34%;
+			height: auto;
+			aspect-ratio: 1;
+			float: right;
+			margin-left: 1rem;
+		}
+
+		.feature-card h3 {
+			margin-bottom: 0.4rem;
+		}
+
+		.card-link {
 			color: #7289DA;
 			text-decoration: none;
 			margin-top: 1rem;
@@ -183,7 +196,7 @@
 			cursor: pointer;
 		}
 
-		.doc-link:hover {
+		.card-link:hover {
 			text-decoration: underline;
 		}
 
@@ -355,15 +368,28 @@
 
 	<section class="features" id="features">
 		<div class="container">
-			<h2 style="text-align: center; margin-bottom: 2rem;">Platform Features</h2>
+			<h2 style="text-align: center; margin-bottom: 2rem;">Features</h2>
 			<div class="features-grid">
 				<div class="feature-card">
 					<h3>Instant Play</h3>
-					<p>No downloads needed - play directly in Discord</p>
+					<img src="img/placeholder-square.png" alt="Instant Play">
+					<p>No download needed, play directly in <strong>Discord</strong>, on mobile or PC!</p>
+					<a href="#" class="card-link">🕹️ Get started!</a>
 				</div>
 				<div class="feature-card">
-					<h3>Cross Platform</h3>
-					<p>Play on desktop, mobile or web</p>
+					<h3>Your Discord Friends</h3>
+					<img src="img/placeholder-square.png" alt="Cross Platform">
+					<p>No new account required, just connect with Discord and hangout with all the friends you already know!</p>
+				</div>
+				<div class="feature-card">
+					<h3>Avatars & Homes</h3>
+					<img src="img/placeholder-square.png" alt="Cross Platform">
+					<p>Customize your avatar and home with many wearables and items made by players like you.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Endless Fun</h3>
+					<img src="img/placeholder-square.png" alt="Cross Platform">
+					<p>From epic FPS battles and high-speed racing to RPGs, obbies, and chill simulation games - there's something awesome for everyone! All made by amazing players like you!</p>
 				</div>
 			</div>
 		</div>
@@ -375,20 +401,25 @@
 			<div class="features-grid">
 				<div class="feature-card">
 					<h3>Luau Scripting</h3>
-					<p>Create games using familiar Luau language</p>
-					<a href="/docs/luau" class="doc-link">View Documentation</a>
+					<img src="img/placeholder-square.png" alt="Luau Scripting">
+					<p>Roblox developers will feel right at home with Luau, the fast, safe, and open-source scripting language built on Lua's foundation.</p>
+					<a href="#" class="card-link">📘 Read the docs!</a>
 				</div>
 				<div class="feature-card">
-					<h3>Free Infrastructure</h3>
-					<p>We handle all the multiplayer backend - just focus on making great games</p>
+					<h3>Real-time Multiplayer</h3>
+					<img src="img/placeholder-square.png" alt="Free Infrastructure">
+					<p>Free, scalable multiplayer servers powered by our infrastructure - just focus on making great games!</p>
 				</div>
 				<div class="feature-card">
-					<h3>Asset Library</h3>
-					<p>Access thousands of free 3D models and assets</p>
+					<h3>Open-Source Modules</h3>
+					<img src="img/placeholder-square.png" alt="Asset Library">
+					<p>Share your cool game modules on GitHub and earn rewards when others use them in their games. We're all about collaborative creation!</p>
 				</div>
 				<div class="feature-card">
-					<h3>Developer Tools</h3>
-					<p>Full suite of tools for game development and testing</p>
+					<h3>Pick your Code Editor</h3>
+					<img src="img/placeholder-square.png" alt="Developer Tools">
+					<p>VSCode, Zed, Sublime... Whatever works best. Please tell us about missing editors you'd to use!</p>
+					<a href="#" class="card-link">🛠️ Setup instructions</a>
 				</div>
 			</div>
 		</div>
