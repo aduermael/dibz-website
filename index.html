@@ -167,7 +167,6 @@
 		}
 
 		.extra-features-grid {
-			display: grid;
 			grid-template-columns: 1fr;
 			gap: 2rem;
 			margin-top: 2rem;
@@ -179,25 +178,32 @@
 		}
 
 		.feature-card {
-			padding: 1.5rem;
+			padding: 1.2rem;
 			border-radius: 10px;
 			background: #fff;
 			box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 			transition: transform 0.3s;
 			cursor: pointer;
 			position: relative;
+			display: flex;
+			align-items: center;
 		}
 
 		.feature-card:hover {
 			transform: translateY(-5px);
 		}
 
+		.feature-card-content {
+			flex: 1;
+		}
+
 		.feature-card img {
 			width: 34%;
+			min-width: 8rem;
+			max-width: 10rem;
 			height: auto;
 			aspect-ratio: 1;
-			float: right;
-			margin-left: 1rem;
+			margin-left: 1.2rem;
 		}
 
 		.feature-card h3 {
@@ -208,6 +214,8 @@
 		.extra-features-grid .feature-card {
 			background: #000;
 			color: #FFF;
+			margin: 0 auto;
+			width: 100%;
 		}
 
 		.extra-features-grid a, .extra-features-grid a:visited {
@@ -216,9 +224,7 @@
 		}
 
 		.extra-features-grid .feature-card img {
-			width: auto;
-			height: 40px;
-			float: left;
+			width: 20%;
 			margin-right: 1rem;
 			margin-left: 0;
 		}
@@ -409,32 +415,42 @@
 			<h2 style="text-align: center; margin-bottom: 2rem;">Features</h2>
 			<div class="features-grid">
 				<div class="feature-card">
-					<h3>Instant Play</h3>
+					<div class="feature-card-content">
+						<h3>Instant Play</h3>
+						<p>No install needed, play directly in <strong>Discord</strong>, on mobile or PC!</p>
+						<a href="#get-started" class="card-link">🕹️ Get started!</a>
+					</div>
 					<img src="img/placeholder-square.png" alt="Instant Play">
-					<p>No install needed, play directly in <strong>Discord</strong>, on mobile or PC!</p>
-					<a href="#get-started" class="card-link">🕹️ Get started!</a>
 				</div>
 				<div class="feature-card">
-					<h3>Your Discord Friends</h3>
+					<div class="feature-card-content">
+						<h3>Your Discord Friends</h3>
+						<p>No new account required, connect with Discord and play with your known friends!</p>
+					</div>
 					<img src="img/placeholder-square.png" alt="Cross Platform">
-					<p>No new account required, connect with Discord and play with your known friends!</p>
 				</div>
 				<div class="feature-card">
-					<h3>Avatars & Homes</h3>
+					<div class="feature-card-content">
+						<h3>Avatars & Homes</h3>
+						<p>Customize your avatar and home with loads of wearables and items made by players like you.</p>
+					</div>
 					<img src="img/placeholder-square.png" alt="Cross Platform">
-					<p>Customize your avatar and home with loads of wearables and items made by players like you.</p>
 				</div>
 				<div class="feature-card">
-					<h3>Endless Fun</h3>
+					<div class="feature-card-content">
+						<h3>Endless Fun</h3>
+						<p>From epic FPS battles and high-speed racing to RPGs, obbies, and chill simulation games - there's always something awesome to do!</p>
+					</div>
 					<img src="img/placeholder-square.png" alt="Cross Platform">
-					<p>From epic FPS battles and high-speed racing to RPGs, obbies, and chill simulation games - there's always something awesome to do!</p>
 				</div>
 			</div>
 			<div class="extra-features-grid">
 				<div class="feature-card">
 					<img src="img/placeholder-square.png" alt="Developer Tools">
-					<h3>Dibz is Open-Source</h3>
-					<p>Join us <a href="#">on Github</a> to share your ideas, report bugs, or help make Dibz even better with your own code!</p>
+					<div class="feature-card-content">
+						<h3>Early Days</h3>
+						<p>Those are the early days of Dibz - there's no better time to join the community and team <a href="#">on Discord</a>!</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -447,33 +463,43 @@
 			<h2 style="text-align: center; margin-bottom: 2rem;">Developers</h2>
 			<div class="features-grid">
 				<div class="feature-card">
-					<h3>Luau Scripting</h3>
+					<div class="feature-card-content">
+						<h3>Luau Scripting</h3>
+						<p>Roblox developers will feel right at home with Luau, the fast, safe, and open-source scripting language built on Lua's foundation.</p>
+						<a href="#" class="card-link">📘 Read the docs!</a>
+					</div>
 					<img src="img/placeholder-square.png" alt="Luau Scripting">
-					<p>Roblox developers will feel right at home with Luau, the fast, safe, and open-source scripting language built on Lua's foundation.</p>
-					<a href="#" class="card-link">📘 Read the docs!</a>
 				</div>
 				<div class="feature-card">
-					<h3>Real-time Multiplayer</h3>
-					<img src="img/placeholder-square.png" alt="Free Infrastructure">
-					<p>Free, scalable multiplayer servers powered by our infrastructure - just focus on making great games!</p>
-				</div>
-				<div class="feature-card">
-					<h3>Open-Source Modules</h3>
-					<img src="img/placeholder-square.png" alt="Asset Library">
-					<p>Share your cool game modules on GitHub and earn rewards when others use them in their games. We're all about collaborative creation!</p>
-				</div>
-				<div class="feature-card">
-					<h3>Pick your Code Editor</h3>
+					<div class="feature-card-content">
+						<h3>Build fast with AI</h3>
+						<p>Ship games faster than ever with Dibz's AI-optimized environment and seamless integrations with AI-powered code editors like Cursor!</p>
+						<a href="#" class="card-link">🛠️ Setup instructions</a>
+					</div>
 					<img src="img/placeholder-square.png" alt="Developer Tools">
-					<p>VSCode, Zed, Sublime... Whatever works best. Please tell us about missing editors you'd to use!</p>
-					<a href="#" class="card-link">🛠️ Setup instructions</a>
+				</div>
+				<div class="feature-card">
+					<div class="feature-card-content">
+						<h3>Real-time Multiplayer</h3>
+						<p>Free, scalable multiplayer servers powered by our infrastructure - just focus on making great games!</p>
+					</div>
+					<img src="img/placeholder-square.png" alt="Free Infrastructure">
+				</div>
+				<div class="feature-card">
+					<div class="feature-card-content">
+						<h3>Open-Source Modules</h3>
+						<p>Share your cool game modules on GitHub and earn rewards when others use them in their games. We're all about collaborative creation!</p>
+					</div>
+					<img src="img/placeholder-square.png" alt="Asset Library">
 				</div>
 			</div>
 			<div class="extra-features-grid">
 				<div class="feature-card">
 					<img src="img/placeholder-square.png" alt="Developer Tools">
-					<h3>Dibz is Open-Source</h3>
-					<p>Join us <a href="#">on Github</a> to share your ideas, report bugs, or help make Dibz even better with your own code!</p>
+					<div class="feature-card-content">
+						<h3>Dibz is Open-Source</h3>
+						<p>Join us <a href="#">on Github</a> to share your ideas, report bugs, or help make Dibz even better with your own code!</p>
+					</div>
 				</div>
 			</div>
 		</div>
